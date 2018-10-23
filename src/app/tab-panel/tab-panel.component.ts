@@ -1,4 +1,4 @@
-import { Component, OnInit, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import { Component, OnInit, ContentChildren, QueryList, AfterContentInit, TemplateRef, Input } from '@angular/core';
 import { TabComponent } from '../tab/tab.component';
 
 @Component({
@@ -8,6 +8,7 @@ import { TabComponent } from '../tab/tab.component';
 })
 export class TabPanelComponent implements OnInit, AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
+  @Input() template: TemplateRef<any>;
   constructor() { }
 
   ngOnInit() {
@@ -15,7 +16,7 @@ export class TabPanelComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     const selectedTab = this.tabs.find(tab => tab.selected);
-    if (!selectedTab) {
+    if (!selectedTab && this.tabs.first) {
       this.tabs.first.selected = true;
     }
   }
@@ -24,4 +25,12 @@ export class TabPanelComponent implements OnInit, AfterContentInit {
     this.tabs.forEach(tab => tab.selected = false);
     tab.selected = true;
   }
+
+  get getTabs {
+    return {
+      tabs: this.tabs
+    }
+  }
+
+  submit() { }
 }
