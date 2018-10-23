@@ -1,6 +1,6 @@
 {
   "name": "tab-component",
-  "version": "0.0.0-development",
+  "version": "0.0.0-semantically-released",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "cz": "git-cz"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +40,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.3.0",
+    "cz-conventional-changelog": "^2.1.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
@@ -55,5 +57,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zessu/angular-custom-tab-component.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
