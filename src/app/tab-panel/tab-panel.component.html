@@ -1,11 +1,14 @@
 <div class="container">
-  <div class="controls" *ngIf="tabs">
-    <span *ngFor="let tab of tabs; let i = index">
-      <ul (click)="selectTab(tab)">
-        {{i + 1}}
-      </ul>
-    </span>
-  </div>
+  <ng-template #defaultControls>
+    <div class="controls" *ngIf="tabs">
+      <span *ngFor="let tab of tabs; let i = index">
+        <ul (click)="selectTab(tab)">
+          {{i + 1}}
+        </ul>
+      </span>
+    </div>
+  </ng-template>
+  <ng-container *ngTemplateOutlet="template ? template : defaultControls; context: getTabs"></ng-container>
   <div class="content">
     <ng-content select=".content"></ng-content>
   </div>
