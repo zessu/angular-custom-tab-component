@@ -6,17 +6,29 @@ import { AppComponent } from './app.component';
 import { TabPanelComponent } from './tab-panel/tab-panel.component';
 import { TabComponent } from './tab/tab.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material';
+import { NextcontrolDirective } from './nextcontrol.directive';
+import { ContentDirective } from './content.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
     TabPanelComponent,
-    TabComponent
+    TabComponent,
+    NextcontrolDirective,
+    ContentDirective
   ],
   imports: [
     BrowserModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'never' } }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

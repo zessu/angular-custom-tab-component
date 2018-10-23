@@ -1,0 +1,8 @@
+div.container {
+  app-tab-panel {
+    display: flex;
+    flex-direction: row;
+  }
+  position: relative;
+  height: auto;
+}

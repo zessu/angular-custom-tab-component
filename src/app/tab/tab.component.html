@@ -1,2 +1,4 @@
-<mat-button>
-</mat-button>
+<ng-container *ngIf="selected">
+  <h3>{{label}}</h3>
+  <ng-content></ng-content>
+</ng-container>

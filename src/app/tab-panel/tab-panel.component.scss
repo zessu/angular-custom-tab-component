@@ -1,0 +1,29 @@
+div.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  div.controls {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+    background-color: #1875FF;
+    flex-grow: 1;
+    span {
+      display: flex;
+      align-items: center;
+      ul {
+        color: #fff;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  div.content {
+    flex-grow: 4;
+    padding: 20px;
+  }
+}

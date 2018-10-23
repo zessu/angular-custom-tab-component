@@ -1,10 +1,36 @@
-<div>
+<div class="container">
   <app-tab-panel>
-    <app-tab label="sign up">
-    </app-tab>
-    <app-tab label="contacts">
-    </app-tab>
-    <app-tab label="login">
-    </app-tab>
+    <span class="content">
+      <app-tab label="Personal Information">
+        <form [formGroup]="form">
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="First Name">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Last Name">
+          </mat-form-field>
+          <button mat-raised-button color="accent">Next</button>
+        </form>
+      </app-tab>
+      <app-tab label="Email">
+        <form [formGroup]="form">
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="First Name">
+          </mat-form-field>
+          <button mat-raised-button color="accent">Next</button>
+        </form>
+      </app-tab>
+      <app-tab label="Create Credentials">
+        <form [formGroup]="form">
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Password">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Confirm Password">
+          </mat-form-field>
+          <button mat-raised-button color="accent">Next</button>
+        </form>
+      </app-tab>
+    </span>
   </app-tab-panel>
 </div>
