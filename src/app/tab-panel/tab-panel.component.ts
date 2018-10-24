@@ -9,6 +9,7 @@ import { TabComponent } from '../tab/tab.component';
 export class TabPanelComponent implements OnInit, AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
   @Input() template: TemplateRef<any>;
+  @Input() sideLabels: TemplateRef<any>;
   constructor() { }
 
   ngOnInit() {
@@ -22,14 +23,14 @@ export class TabPanelComponent implements OnInit, AfterContentInit {
   }
 
   selectTab(tab) {
-    this.tabs.forEach(tab => tab.selected = false);
+    this.tabs.forEach(item => item.selected = false);
     tab.selected = true;
   }
 
-  get getTabs {
+  get getTabs() {
     return {
       tabs: this.tabs
-    }
+    };
   }
 
   submit() { }
