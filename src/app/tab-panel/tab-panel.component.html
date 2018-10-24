@@ -2,9 +2,9 @@
   <ng-template #defaultControls>
     <div class="controls" *ngIf="tabs">
       <span *ngFor="let tab of tabs; let i = index">
-        <ul (click)="selectTab(tab)">
+        <button mat-stroked-button (click)="selectTab(tab)">
           {{i + 1}}
-        </ul>
+        </button>
       </span>
     </div>
   </ng-template>

@@ -19,17 +19,18 @@ export class TabPanelComponent implements OnInit, AfterContentInit {
     if (!selectedTab && this.tabs.first) {
       this.tabs.first.selected = true;
     }
+    console.log('template is', this.template);
   }
 
   selectTab(tab) {
-    this.tabs.forEach(tab => tab.selected = false);
+    this.tabs.forEach(item => item.selected = false);
     tab.selected = true;
   }
 
-  get getTabs {
+  get getTabs() {
     return {
       tabs: this.tabs
-    }
+    };
   }
 
   submit() { }

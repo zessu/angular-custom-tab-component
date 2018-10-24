@@ -1,5 +1,5 @@
 <div class="container">
-  <app-tab-panel #tabsPanel>
+  <app-tab-panel #tabsPanel [template]="customTemplate">
     <span class="content">
       <app-tab label="Personal Information" #personalInformationTab>
         <form [formGroup]="form">
@@ -10,17 +10,16 @@
             <input matInput placeholder="Last Name">
           </mat-form-field>
         </form>
-        <button mat-raised-button color="accent" (click)="tabsPanel.selectTab(emailTab)">Next</button>
+        <button mat-stroked-button (click)="tabsPanel.selectTab(emailTab)">Next</button>
       </app-tab>
-      <app-tab label="
-            Email" #emailTab>
+      <app-tab label="Email" #emailTab>
         <form [formGroup]="form">
           <mat-form-field appearance="outline">
             <input matInput placeholder="First Name">
           </mat-form-field>
         </form>
-        <button mat-raised-button color="primary" (click)="tabsPanel.selectTab(personalInformationTab)">Previous</button>
-        <button mat-raised-button color="accent" (click)="tabsPanel.selectTab(credentialsTab)">Next</button>
+        <button mat-stroked-button (click)="tabsPanel.selectTab(personalInformationTab)">Previous</button>
+        <button mat-stroked-button (click)="tabsPanel.selectTab(credentialsTab)">Next</button>
       </app-tab>
       <app-tab label="Create Credentials" #credentialsTab>
         <form [formGroup]="form">
@@ -31,8 +30,8 @@
             <input matInput placeholder="Confirm Password">
           </mat-form-field>
         </form>
-        <button mat-raised-button color="primary" (click)="tabsPanel.selectTab(emailTab)">Previous</button>
-        <button mat-raised-button color="accent" (click)="submit()">Save</button>
+        <button mat-stroked-button (click)="tabsPanel.selectTab(emailTab)">Previous</button>
+        <button mat-stroked-button (click)="submit()">Save</button>
       </app-tab>
     </span>
   </app-tab-panel>
