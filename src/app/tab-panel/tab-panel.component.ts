@@ -9,6 +9,7 @@ import { TabComponent } from '../tab/tab.component';
 export class TabPanelComponent implements OnInit, AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
   @Input() template: TemplateRef<any>;
+  @Input() sideLabels: TemplateRef<any>;
   constructor() { }
 
   ngOnInit() {
@@ -19,7 +20,6 @@ export class TabPanelComponent implements OnInit, AfterContentInit {
     if (!selectedTab && this.tabs.first) {
       this.tabs.first.selected = true;
     }
-    console.log('template is', this.template);
   }
 
   selectTab(tab) {
