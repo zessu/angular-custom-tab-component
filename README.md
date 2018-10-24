@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/zessu/angular-custom-tab-component.svg?style=svg)](https://circleci.com/gh/zessu/angular-custom-tab-component)
 
-[!screenshot](Capture.PNG)
+![screenshot](Capture.PNG)
 
 # TabComponent
 
